@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ServiceDB" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="../ServiceDB.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ServiceDB" contract="ServiceReferenceDB.ServiceDB"
+                name="BasicHttpBinding_ServiceDB" />
+        </client>
+    </system.serviceModel>
+</configuration>

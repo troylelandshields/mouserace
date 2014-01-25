@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="www.troylelandshields.me" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="www.troylelandshields.me" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="www.troylelandshields.me/Imports">
+      <xsd:import schemaLocation="http://localhost:51243/ServiceDB.svc?xsd=xsd0" namespace="www.troylelandshields.me" />
+      <xsd:import schemaLocation="http://localhost:51243/ServiceDB.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51243/ServiceDB.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Maze2SL5.Web" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ServiceDB_getRaces_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRaces" />
+  </wsdl:message>
+  <wsdl:message name="ServiceDB_getRaces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRacesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceDB_getHashRaces_InputMessage">
+    <wsdl:part name="parameters" element="tns:getHashRaces" />
+  </wsdl:message>
+  <wsdl:message name="ServiceDB_getHashRaces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getHashRacesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceDB_addRace_InputMessage">
+    <wsdl:part name="parameters" element="tns:addRace" />
+  </wsdl:message>
+  <wsdl:message name="ServiceDB_addRace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addRaceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceDB">
+    <wsdl:operation name="getRaces">
+      <wsdl:input wsaw:Action="www.troylelandshields.me/ServiceDB/getRaces" message="tns:ServiceDB_getRaces_InputMessage" />
+      <wsdl:output wsaw:Action="www.troylelandshields.me/ServiceDB/getRacesResponse" message="tns:ServiceDB_getRaces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getHashRaces">
+      <wsdl:input wsaw:Action="www.troylelandshields.me/ServiceDB/getHashRaces" message="tns:ServiceDB_getHashRaces_InputMessage" />
+      <wsdl:output wsaw:Action="www.troylelandshields.me/ServiceDB/getHashRacesResponse" message="tns:ServiceDB_getHashRaces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addRace">
+      <wsdl:input wsaw:Action="www.troylelandshields.me/ServiceDB/addRace" message="tns:ServiceDB_addRace_InputMessage" />
+      <wsdl:output wsaw:Action="www.troylelandshields.me/ServiceDB/addRaceResponse" message="tns:ServiceDB_addRace_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
