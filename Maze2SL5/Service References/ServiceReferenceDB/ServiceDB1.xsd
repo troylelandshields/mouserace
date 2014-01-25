@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.troylelandshields.me" elementFormDefault="qualified" targetNamespace="www.troylelandshields.me" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51243/ServiceDB.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Maze2SL5.Web" />
+  <xs:element name="getRaces">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRacesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Maze2SL5.Web" minOccurs="0" name="getRacesResult" nillable="true" type="q1:ArrayOfclsRace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHashRaces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hashtag" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHashRacesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Maze2SL5.Web" minOccurs="0" name="getHashRacesResult" nillable="true" type="q2:ArrayOfclsRace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addRace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Maze2SL5.Web" minOccurs="0" name="r" nillable="true" type="q3:clsRace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addRaceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
